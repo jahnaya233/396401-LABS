@@ -512,7 +512,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: bd3748fd3d2fd5f48a9d704c163fdf3e, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 9eb866f35c149b245a51346e96484361, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &410087039
 GameObject:
@@ -818,6 +818,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &908179577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908179579}
+  - component: {fileID: 908179578}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &908179578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908179577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c492426978c951e43809dfc2c0c96ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Core::EventTimer
+  _channel: {fileID: 11400000, guid: e10c9656eb2eca24bb6c07a66f807469, type: 2}
+  _channelPos: {fileID: 0}
+--- !u!4 &908179579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908179577}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948474339
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6337166c9774949bc5c76aee8087a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Core::Core.FSM.NPCStateMachine
+  harvestEvent: {fileID: 11400000, guid: e10c9656eb2eca24bb6c07a66f807469, type: 2}
+  isHarvestReady: 0
 --- !u!136 &948474341
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1317,3 +1365,4 @@ SceneRoots:
   - {fileID: 484932101}
   - {fileID: 948474344}
   - {fileID: 1353497536}
+  - {fileID: 908179579}
