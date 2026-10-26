@@ -64,34 +64,35 @@ public class BoidSpawner : MonoBehaviour
         spawnArea = root.transform;
     }
 
-  //  private BoidAgent CreateBoid()
-    //{
-   //     Vector3 spawnPosition = GetRandomSpawnOffset();
-  //      GameObject boidObject = Instantiate(boidPrefab, spawnPosition, Quaternion.identity, spawnArea);
-    //    boidObject.transform.localScale = Vector3.one * boidSize;
+    private BoidAgent CreateBoid()
+    {
+      Vector3 spawnPosition = GetRandomSpawnOffset();
+        GameObject boidObject = Instantiate(boidPrefab, spawnPosition, Quaternion.identity, spawnArea);
+       boidObject.transform.localScale = Vector3.one * boidSize;
     
-    //    CapsuleCollider collider = boidObject.GetOrAddComponent<CapsuleCollider>();
-    //    collider.isTrigger = false;
+       CapsuleCollider collider = boidObject.GetOrAddComponent<CapsuleCollider>();
+       collider.isTrigger = false;
 
-     //   Rigidbody body = boidObject.GetOrAddComponent<Rigidbody>();
-    //    body.useGravity = false;
-   //     body.constraints = RigidbodyConstraints.FreezeRotation;
-   //     body.interpolation = RigidbodyInterpolation.Interpolate;
-    //    body.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        Rigidbody body = boidObject.GetOrAddComponent<Rigidbody>();
+        body.useGravity = false;
+        body.constraints = RigidbodyConstraints.FreezeRotation;
+       body.interpolation = RigidbodyInterpolation.Interpolate;
+        body.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
 
-      //  BoidAgent boid = boidObject.GetOrAddComponenet<BoidAgent>();
-      //  boid.ConfigureBounds(spawnArea.position, flockBoundRadius, true);
-        //boid.ConfigureSpeed(boidBaseSpeed + Random.Range(-boidSpeedVariation, boidSpeedVariation));
-       // boid.ConfigureVerticalConstraint(boidHeightConstraint, shouldConstraintHeight);
-      //  return boid;
+        BoidAgent boid = boidObject.GetOrAddComponentt<BoidAgent>();
+
+        boid.ConfigureBounds(spawnArea.position, flockBoundRadius, true);
+        boid.ConfigureSpeed(boidBaseSpeed + Random.Range(-boidSpeedVariation, boidSpeedVariation));
+       boid.ConfigureVerticalConstraint(boidHeightConstraint, shouldConstraintHeight);
+        return boid;
     }
 
- //   private Vector3 GetRandomSpawnOffset()
- //   {
-   //     return spawnArea.position + new Vector3(
-     //       Random.Range(-spawnOffset.x, spawnOffset.x),
-       //     shouldConstraintHeight ? 0f : Random.Range(-spawnOffset.y, spawnOffset.y),
-         //   Random.Range(-spawnOffset.z, spawnOffset.z));
-  //  }
-//}
+   private Vector3 GetRandomSpawnOffset()
+    {
+       return spawnArea.position + new Vector3(
+            Random.Range(-spawnOffset.x, spawnOffset.x),
+            shouldConstraintHeight ? 0f : Random.Range(-spawnOffset.y, spawnOffset.y),
+          Random.Range(-spawnOffset.z, spawnOffset.z));
+    }
+}
